@@ -1,0 +1,38 @@
+.form-group{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: .6rem auto;
+}
+.alignRight{
+   margin-top: 2rem;
+   display: flex;
+   justify-content: flex-end;
+  
+
+ }
+ .miseEnPage{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ }
+ .align{
+    display: flex;
+    text-align: center;
+    
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: .6rem auto;
+    flex-wrap: wrap;
+ }
+ .card{
+  width: 35%;
+  margin: .5rem;
+ }
+.dropdown-menu:hover{
+   display:block;
+ } 

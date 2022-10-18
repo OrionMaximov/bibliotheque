@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add{% endblock %}
+
+{% block body %}
+
+
+ <div class="form-control">
+    {{form_start(formulaireLivre)}}
+    {{form_widget (formulaireLivre,{'attr':{"class":"champ"}})}}  
+   
+    {% if mode != null %}
+    <div class="alignRight">
+    <button type="submit"  class="btn btn-danger">Modifier</button>
+    </div>
+    {% else %}
+    <div class="alignRight">
+      <button type="submit"class="btn btn-success">Ajouter</button>
+   </div>
+   {% endif %}
+    
+   {{form_end(formulaireLivre)}} 
+</div>
+
+
+{% endblock body %}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add{% endblock %}
+
+{% block body %}
+
+<div class="form-control">
+    {{form_start(formulaireInscription)}}
+    {{form_widget (formulaireInscription,{'attr':{"class":"champ"}})}}  
+   
+
+    <div class="alignRight">
+    <div><button type="submit" class="btn btn-warning">Inscription</button></div> 
+    <div><button type="button" class="btn btn-primary"><a href="{{path('app_login')}}">Vous avez déjà un compte?</a></button></div> 
+    </div>
+    
+   {{form_end(formulaireInscription)}} 
+</div>
+
+
+{% endblock body %}

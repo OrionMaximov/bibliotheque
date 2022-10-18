@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}livre par categorie{% endblock %}
+
+{% block body %}
+{% if is_granted("ROLE_ADMIN") %}
+<button class="btn btn-danger"><a href="{{path('ajoutLivre')}}"  rel="noopener noreferrer">Ajouter un livre</a></button>
+{% endif %}
+<div class="align">
+  {% for livre in livres %}
+    <div class="card text-white bg-secondary mb-3" style="max-width: 40rem;">
+      <div class="card-header">Information du livre {{livre.titre}}</div>
+        <div class="card-body">
+         
+        <h4 class="card-title">le titre est : {{livre.titre}}</h4>
+        <h4 class="card-title">auteur du livre : {{livre.auteur}}</h4>
+        
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

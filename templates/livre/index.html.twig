@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}l'ensemble des livres{% endblock %}
+
+{% block body %}
+{% if is_granted("ROLE_ADMIN") %}
+<button class="btn btn-danger"><a href="{{path('ajoutLivre')}}"  rel="noopener noreferrer">Ajouter un livre</a></button>
+{% endif %}
+<div class="align">
+  {% for livre in livres %}
+    <div class="card text-white bg-secondary mb-3" style="max-width: 40rem;">
+      <div class="card-header">Information du livre {{livre.titre}}</div>
+        <div class="card-body">
+        <h4 class="card-title">le titre est : {{livre.titre}}</h4>
+        <h4 class="card-title">auteur du livre : {{livre.auteur}}</h4>
+        <p>date de sortie {{livre.dateSortie|date("d-M-Y")}}</p>
+        <p class="card-text"> Résumé :Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p class="card-text">la categorie du livre est : {{livre.categorie}}</p>
+        {% if is_granted("ROLE_ADMIN") %}
+        <button class="btn btn-warning"><a href="{{path('modifLivre', {'id':livre.id})}}">Modifier les informations du livre</a></button>
+        <button class="btn btn-danger"><a href="{{path('delLivre', {'id':livre.id})}}" > supprimer les informations du livre</a></button>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
