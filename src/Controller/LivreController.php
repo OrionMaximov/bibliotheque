@@ -69,7 +69,7 @@ class LivreController extends AbstractController
     /**
      * @Route("/categoryShowlivres/{id}", name="categoryLivre")
      */
-    public function findLivreByCategory(ManagerRegistry $doctrine,Categorie $categorie,$id)
+    public function findLivreByCategory(ManagerRegistry $doctrine,$id)
     {   
         $categorie= $doctrine->getRepository(Categorie::class);
         $livres=$categorie->findBooksByCategory($id);
